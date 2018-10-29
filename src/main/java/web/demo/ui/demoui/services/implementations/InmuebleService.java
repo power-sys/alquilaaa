@@ -1,5 +1,7 @@
 package web.demo.ui.demoui.services.implementations;
 
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -41,6 +43,11 @@ public class InmuebleService implements InmuebleServiceInterface{
 		p.setDescription(inmueble.getDetallesLegales());
 		this.propertyRepository.save(p);
 		return true;
+	}
+
+	@Override
+	public List<Property> findAll() {
+		return (List<Property>) this.propertyRepository.findAll();
 	}
 
 }
