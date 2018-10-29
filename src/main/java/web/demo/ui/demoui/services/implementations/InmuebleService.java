@@ -32,17 +32,13 @@ public class InmuebleService implements InmuebleServiceInterface{
 		p.setPrice(inmueble.getPrecio());
 		Detail d = new Detail();
 		d.setName(inmueble.getDetallesInmueble());
-		d.setValue(inmueble.getDetallesInmueble());
 		p.getDetails().add(d);
 		Detail d2 = new Detail();
-		d.setName(inmueble.getOtrosDetalles());
-		d.setValue(inmueble.getOtrosDetalles());
+		d2.setName(inmueble.getOtrosDetalles());
 		p.getDetails().add(d2);
 		p.setAdress(a);
 		p.setType(PlaceType.DEPARMENT);
-		Detail d1 = new Detail();
-		d1.setName(inmueble.getOtrosDetalles());
-		p.getLegals().add(d1);
+		p.setDescription(inmueble.getDetallesLegales());
 		this.propertyRepository.save(p);
 		return true;
 	}

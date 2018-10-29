@@ -83,71 +83,21 @@
 						<label class="subtitle">
 							<span id="direccion">DIRECCIÓN</span>
 						</label>
-						<span name="addressgroup">Dirección:</span><span class="dire" th:text="*{aStreet}" ></span>
-						<span name="addressgroup">Altura:</span><span class="dire" th:text="*{aNumber}"></span>	
-										
+						<span class="dire" th:text="*{aStreet}" ></span>
 						<p name="otros" th:each="d : *{aDetails}">
 							<span name="text" th:text="${d.name}"></span>
-							<span th:text="${d.value}"> A 200 mts de la UNNE, frente a la facultad de ingeniería.</span>
 						</p>
 					</div>
 				</div>
 			</div>
-			<div class="Description">
-				<h2>DESCRIPCIÓN</h2>
-				<p th:text="*{description}"></p>
-				<hr>
-			</div>
-
 			<div class="LegalInfo">
 				<h2>INFORMACIÓN LEGAL</h2>
-				<P>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed
+				<p th:text="*{description}">
+					Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed
 					do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
 					enim ad minim veniam, quis nostrud exercitation ullamco laboris
-					nisi ut.</P>
-				<div class="wrapper">
-					<div class="Rtable Rtable--5cols Rtable--collapse">
-						<div class="Rtable-row Rtable-row--head">
-							<div class="Rtable-cell date-cell column-heading"></div>
-							<div class="Rtable-cell topic-cell column-heading">Si</div>
-							<div class="Rtable-cell access-link-cell column-heading">No</div>
-							<div class="Rtable-cell replay-link-cell column-heading"></div>
-
-						</div>
-						<!-- ROW -->
-						<th:block th:each="ld, n : *{legals}" >
-						<div class="Rtable-row" th:classappend="${(n.index % 2) == 0} ? is-striped : userclass">
-							<div class="Rtable-cell date-cell">
-								<div class="Rtable-cell--heading">Date</div>
-								<div class="Rtable-cell--content date-content">
-									<span class="webinar-date" th:text="${ld.name}">Garante</span><br />
-								</div>
-							</div>
-							<div class="Rtable-cell topic-cell">
-								<div class="Rtable-cell--content title-content">
-									<input type="checkbox" class="check" th:id="${ld.name}" th:name="${ld.name}" value="si" th:checked="true">
-									<label th:for="${ld.name}"></label>
-								</div>
-							</div>
-							<div class="Rtable-cell access-link-cell">
-								<div class="Rtable-cell--heading">Access Link</div>
-								<div class="Rtable-cell--content access-link-content">
-									<input type="checkbox" class="check" th:id="${ld.value}" th:name="${ld.name}" value="no">
-									<label th:for="${ld.value}"></label>
-								</div>
-							</div>
-							<div class="Rtable-cell replay-link-cell">
-								<div class="Rtable-cell--heading">Replay</div>
-								<div class="Rtable-cell--content replay-lik-content">
-									$<span th:text="${ld.value}">8000</span>
-								</div>
-							</div>
-
-						</div>
-						</th:block>
-						<!-- row -->
-					</div>
-				</div>
+					nisi ut.
+				</p>
 				<hr>
 			</div>
 			<div class="tagscontainer">
