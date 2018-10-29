@@ -1,0 +1,516 @@
+@import url('https://fonts.googleapis.com/css?family=Asap|Lato');
+
+html {
+overflow-x: hidden;
+}
+body {
+    margin: 0;
+    border:0;
+
+}
+.icon,img{
+    width: 45%;
+    height: auto;
+}
+.Container {
+    height: auto;
+    top: 0;
+    margin: 0;
+    position: -webkit-sticky;
+    position: sticky;
+    top:40%;
+}
+.GridContainer {
+    height: auto;
+    display:grid;
+    grid-template-columns:repeat (6, 1fr);
+    grid-template-rows: 25% 25% 25% 25%;
+    grid-column-gap: 2%; 
+    margin-top: 50px;
+    justify-content: center;
+}
+
+.Imagecontainer {
+    margin: 0;
+    height: 50vh;
+    background-color:black;
+    position: -webkit-sticky;
+    position: sticky;
+    box-sizing: border-box;
+    box-shadow: 0 0 40px rgba(0, 0, 0, 0.2);
+    top: 8%;
+    z-index: 3;
+    display: grid;
+    grid-template-columns: repeat(6,1fr);
+    grid-template-rows:100%;
+}
+
+.image1 {
+    grid-column-start: 2;
+    grid-column-end: 6; 
+    grid-row-end:4;
+    grid-row-start: 1;
+    background-image: url('../image/edificio7.jpg');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+h2 {
+    font-family: 'Asap', sans-serif;
+    font-size:calc(14px + 0.3vw);
+    font-weight: bolder;
+    letter-spacing: 1px;
+}
+
+h3 {
+    font-family: 'Lato', sans-serif;
+    color: white;
+     line-height: 20px;
+    letter-spacing: 0.5px;
+     font-size: 1vw;
+    margin: 0;
+}
+
+p {
+    font-family: 'Lato', sans-serif;
+    font-weight: 400;
+    line-height: 150%;
+}
+
+#navbar {
+    width: 100vw;
+    height: 12vh;
+    box-shadow: 0px 10px 10px -10px rgba(0, 0, 0, 0.3);
+    position: -webkit-sticky;
+    position: sticky;
+    z-index: 4;
+    top:0;
+    background-color: white;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    margin:0;
+}
+
+.nav a{
+    display: flex;
+    align-items: center;
+}
+
+.nav a:link {
+    text-decoration: none;
+    color: black;
+}
+.nav a:link, a:visited {
+    text-decoration: none;
+    color: black;
+}
+
+a:link:active, a:visited:active {
+    color: (internal value);
+}
+
+#anuncio {
+    width:2vw;
+    height: 4vh;
+    border-radius:180px;
+    border: none;
+    outline: none;
+    background-color: #d9654f
+}
+
+#buscar {
+    width:2vw;
+    height: 4vh;
+    border-radius:180px;
+    border: none;
+    outline: none;
+    background-color: #d9654f
+}
+.buttons {
+    display: flex;
+    flex-direction: row;
+    justify-content:flex-end;
+    width: 40%;
+}
+[name="btnB"] {
+    margin-right: 20px;
+}
+[name="label"] {
+    margin-left: 10px;
+    font-family: 'Asap',sans-serif;
+    font-weight: 600;
+    font-size:calc (12px + 0.3vw);
+}
+#formulario {
+    width:150px;
+}
+
+.ContainerNavbar {
+    margin: auto;
+    width:80vw;
+    display: flex;
+    align-items:center;
+    cursor: pointer;
+    justify-content: space-between;
+}
+/*......................................*/
+.Description {
+    width: 50vw;
+    grid-row: 4;
+    grid-column: 3/4;
+    margin-bottom: 2%;
+    justify-content: center;
+}
+.ContactInfo {
+    grid-row: 1/4;
+    grid-column: 4/4;
+}
+
+.LegalInfo {
+    width:50vw;
+    grid-row: 5;
+    grid-column: 3/4;
+    justify-content: center;
+}
+.basicdata {
+    padding: 2%
+    grid-row: 3 /span 4;
+    grid-column: 3/4;
+    
+}
+.tagscontainer {
+    grid-row: 9;
+    grid-column: 3/4;
+    margin-bottom: 50px;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+    margin-right: 30px;
+}
+[name="tags"] {
+    grid-row: 5;
+    grid-column: 3/4;
+    justify-content: center;
+    margin-top: 10px;
+    padding: 1%;
+    background-color:#d9654f;
+    color:white;
+    font-family: 'Asap', sans-serif;
+    font-weight: 700;
+    font-size:calc(9px + 0.2vw);
+    border-radius: 5px;
+    letter-spacing: 1px;
+    margin-right: 20px;
+}
+
+/*......................................*/
+
+footer {
+    display: flex;
+    background-color: #d9654f;
+    height: auto;
+    justify-content: center;
+}
+.footercontainer {
+    width: 80vw;
+    height: auto;
+    display: flex;
+    justify-content:space-between;
+    align-content: center;
+}
+
+/*......................................*/
+* {
+  box-sizing: border-box;
+}
+
+.wrapper {
+  width: 100%;
+  padding: 1em;
+}
+
+.is-striped {
+  background-color: rgba(233, 200, 147, 0.2);
+}
+
+/* Table column sizing
+================================== */
+.date-cell {
+  width: 40%;
+}
+
+.topic-cell {
+  width: 1vw;
+
+}
+.topic-cell  {
+  width: 3vw;
+  display: flex;
+  justify-content: center;
+}
+.access-link-cell {
+  width: 3vw;
+  display: flex;
+  justify-content: center;
+
+}
+
+.replay-link-cell {
+  width: 10vw;
+}
+
+
+/*
+================================== */
+.Rtable {
+  display: flex;
+  flex-wrap: wrap;
+  padding: 0;
+  box-shadow: 0 0 40px rgba(0, 0, 0, 0.2);
+}
+.Rtable .Rtable-row {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: 'Lato', sans-serif;
+  font-weight: 700;
+}
+.Rtable .Rtable-row .Rtable-cell {
+  box-sizing: border-box;
+  flex-grow: 1;
+  padding: 1vw;
+  overflow: hidden;
+  list-style: none;
+  margin: 0;
+}
+.Rtable .Rtable-row .Rtable-cell.column-heading {
+  font-family: 'Lato', sans-serif;
+  font-weight: 700;
+  color: black;
+
+}
+.Rtable .Rtable-row .Rtable-cell .Rtable-cell--heading {
+  display: none;
+}
+
+.Rtable .Rtable-row .Rtable-cell .Rtable-cell--content .webinar-date {
+font-family: 'Lato', sans-serif;
+font-weight:400;
+}
+
+
+/* Responsive
+==================================== */
+.check {
+  position: absolute;
+  opacity: 0;
+}
+.check + label {
+  position: relative;
+  cursor: pointer;
+  padding: 0;
+}
+.check + label:before {
+  content: '';
+  margin-right: 10px;
+  display: inline-block;
+  vertical-align: text-top;
+  width: 20px;
+  height: 20px;
+  background-color:darkgray;
+}
+.check:hover + label:before {
+  background: #d9654f;
+  font-family: 'Source Sans Pro', sans-serif; 
+}
+.check:focus + label:before {
+  box-shadow: 0 0 0 3px rgba(0, 0, 0, 0.12);
+}
+.check:checked + label:before {
+  background: #f35429;
+}
+.checked:disabled + label {
+  color: #b8b8b8;
+  cursor: auto;
+}
+.check:disabled + label:before {
+  box-shadow: none;
+  background: #ddd;
+}
+.check:checked + label:after {
+  content: '';
+  position: absolute;
+  left: 5px;
+  top: 9px;
+  background color:lightgray;
+  width: 2px;
+  height: 2px;
+  box-shadow: 2px 0 0 white, 4px 0 0 white, 4px -2px 0 white, 4px -4px 0 white, 4px -6px 0 white, 4px -8px 0 white;
+  -webkit-transform: rotate(45deg);
+          transform: rotate(45deg);
+}
+
+.tags {
+    padding: 0.3em;
+    background-color:#d9654f;
+    color:white;
+    font-family: 'Asap', sans-serif;
+    font-weight: 700;
+    text-align: center;
+    border-radius: 5px;
+    margin-right: 20px;
+}
+ [name="departamento"]{
+    background-color:#f5c67f;
+    font-size: calc (16px + 1vw);
+}
+
+/*......................................*/
+
+[name="text"] {
+    font-family: 'Asap', sans-serif;
+    font-weight: 700;
+    margin-right:5px;
+}
+
+[name="otros"] {
+    margin-left:105px
+}
+
+.rooms {
+    margin-top: 20px;
+    margin-bottom: 10px;
+
+}
+
+.services {
+    margin-bottom:0;
+    padding: 0;
+}
+
+#alquiler {
+    padding: .3em;
+    background-color:#d9654f;
+    color:white;
+    font-family: 'Asap', sans-serif;
+    font-weight: 700;
+    border-radius: 5px;
+}
+
+.rent {
+    display: flex;
+    flex-direction: row;
+    flex-wrap:wrap;
+    align-items:center;
+    justify-content:flex-start;
+    margin-bottom: 3%;
+    width:100%;
+}
+#expensas {
+    padding: .3em;
+    background-color:#d9654f;
+    color:white;
+    font-family: 'Asap', sans-serif;
+    font-weight: 700;
+    border-radius: 5px;
+}
+
+span.title {
+    font-family: 'Asap', sans-serif;
+    font-weight: 700;
+    margin-left: 10px;
+    margin-right: 10px;
+    font-size:0.9em;
+}
+.tagsgroup {
+    margin-bottom: 5%;
+    width: 60%;
+}
+
+.subtitle {
+    font-family: 'Asap', sans-serif;
+    font-weight: 700;
+    font-size: calc(12px + 0.3vw);
+    margin-right: 1em;
+}
+
+[name="addressgroup"] {
+    font-family: 'Asap', sans-serif;
+    font-weight: 700;
+    font-size: calc(11px + 0.3vw);
+    margin-right: 8px;
+    
+}
+
+[name="zonas"] {
+    margin-left: 30px;
+    font-family: 'Lato', sans-serif;
+    font-weight: 400;
+}
+
+.servicios {
+    font-family: 'Lato', sans-serif;
+    font-weight: 400;
+    margin-right: 5px;
+}
+
+.dire {
+    font-family: 'Lato', sans-serif;
+    font-weight: 400;
+    margin-right: 10px;
+}
+
+.datacontainer {
+    margin-bottom: 50px;
+    border-radius: 4px;
+    box-sizing: border-box;
+    box-shadow: 0 0 30px rgba(0, 0, 0, 0.2);
+    padding: 2%;
+    width: 100%;
+    padding: 3%;
+}
+
+hr {
+ color: darkgray;
+}
+
+ul {
+    font-family: 'Lato', sans-serif;
+    color: white;
+    list-style: none;
+    margin-left: 0;
+    font-weight: 700;
+    font-size: calc(10px + 0.2vw);
+    letter-spacing: 0.5px;
+}
+
+li {
+    list-style-type: none;
+    margin-bottom: 7px;
+    letter-spacing: 1px;
+
+}
+
+.redes {
+    text-align: center;
+    margin:10px;
+    font-family: 'Lato', sans-serif;
+    color: white;
+    font-weight: 700;
+    font-size: calc(13px + 0.2vw);
+    align-self: flex-end;
+    letter-spacing: 1px;
+}
+
+.icons {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    margin-top: 10px;
+}
+
+#otros {
+    font-size: 1vw
+}

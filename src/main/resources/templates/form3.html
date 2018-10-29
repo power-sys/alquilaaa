@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+<html  xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:th="http://www.thymeleaf.org"
+	xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout">
+
+<head>
+    <title>Crear un anuncio</title>
+    <link rel="stylesheet" type="text/css" th:href="@{/css/form3.css}">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+
+<body>
+    <form>
+        <div class="firstContainer">
+            <div class="title">
+                <h1>CREAR ANUNCIO</h1>
+            </div>
+            <div class="gridContainer">
+                <div class="imageContainer">
+                    <div class="imageUpload">
+                        <input type='file' id="imageUpload" accept=".png, .jpg, .jpeg" />
+                        <label for="imageUpload"></label>
+                    </div>
+                    <div class="imagePreview">
+                        <div id="imagePreview">
+                        </div>
+                    </div>
+                </div>
+                <div class="descriptionText" id="text">
+                    <span>DESCRIPCIÃ“N</span><textarea type="text" id="ingresartexto"></textarea>
+                </div>
+
+                <div class="addressContainer">
+                    <h3>DIRECCIÃ“N</h3>
+                    <label for="calle">Calle</label>
+                    <input type="text" name="calle" placeholder="Ingresar calle..." required>
+                    <label for="altura">Altura</label>
+                    <input type="text" name="altura" required>
+                </div>
+                <div class="direccioncontainer2">
+                    <label for="departamento">Departamento</label>
+                    <input type="text" name="departamento" required>
+                    <label for="piso" id="floor">Piso</label>
+                    <input type="text" name="piso" required>
+                </div>
+
+                <label for="otros">Otros</label>
+                <input type="text" name="otros" placeholder="Datos que ayuden a encontrar la propiedad..." required>
+            </div>
+            <div class="secondgridContainer">
+
+                <div class="userButtons" id="userbtn">
+                    <button class="btn" name="user" type="button" value="inmobiliaria" id="inmobiliaria">INMOBILIARIA</button>
+                    <button class="btn" name="user" type="button" value="propietario" id="propietario">PROPIETARIO</button>
+                    <button class="tipo" name="buttons" type="button" value="departamento" id="departamento">DEPARTAMENTO</button>
+                    <button class="tipo" name="buttons" type="button" value="casa" id="casa">CASA</button>
+                </div>
+                <div class="habContainer">
+                    <span>HABITACIONES</span>
+                    <input type="radio" id="radio1" name="hab" value="1" checked>
+                    <label for="radio1" name="hablabel">1</label>
+                    <input type="radio" id="radio2" name="hab" value="2">
+                    <label for="radio2" name="hablabel">2</label>
+                    <input type="radio" id="radio3" name="hab" value="3">
+                    <label for="radio3" name="hablabel">3</label>
+                    <input type="radio" id="radio4" name="hab" value="4">
+                    <label for="radio4" name="hablabel">4 o mÃ¡s</label>
+                </div>
+
+                <div class="rentPrice">
+
+                    <div class="slidecontainer">
+                        <span>ALQUILER MONTO</span>
+                        $<input type="number" step="any" name="monto">
+
+                        <div class="expensasbuttons" id="expensas">
+                            <input type="button" class="monto" name="monto" value="Con expensas">
+                            <input type="button" class="monto" name="monto" value="Sin expensas">
+                            <label for="expensas">$</label>
+                            <input type="number" id="expensas" name="expensas">
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="thirdgridContainer">
+                <div class="infolegalcontainer">
+                    <span>INFORMACIÃ“N LEGAL</span>
+                    <textarea type="text" name="ingresartexto" id="legal"></textarea>
+                    <div class="wrapper">
+                        <div class="Rtable Rtable--5cols Rtable--collapse">
+                            <div class="Rtable-row Rtable-row--head">
+                                <div class="Rtable-cell date-cell column-heading"></div>
+                                <div class="Rtable-cell topic-cell column-heading">Si</div>
+                                <div class="Rtable-cell access-link-cell column-heading">No</div>
+                                <div class="Rtable-cell replay-link-cell column-heading"></div>
+
+                            </div>
+
+                            <div class="Rtable-row">
+                                <div class="Rtable-cell date-cell">
+                                    <div class="Rtable-cell--heading">Date</div>
+                                    <div class="Rtable-cell--content date-content"><span class="webinar-date">Garante</span><br /></div>
+                                </div>
+                                <div class="Rtable-cell topic-cell">
+                                    <div class="Rtable-cell--content title-content"><input type="radio" id="gsi" name="garante" value="si" checked><label for="gsi"></label></div>
+                                </div>
+                                <div class="Rtable-cell access-link-cell">
+                                    <div class="Rtable-cell--heading">Access Link</div>
+                                    <div class="Rtable-cell--content access-link-content"> <input type="radio" id="gno" name="garante" value="no">
+                                        <label for="gno"></label></div>
+                                </div>
+                                <div class="Rtable-cell replay-link-cell">
+                                    <div class="Rtable-cell--heading">Replay</div>
+                                    <div class="Rtable-cell--content replay-lik-content"><label for="contrato">$</label><input type="number" step="any" name="contrato" value="monto"></div>
+                                </div>
+
+                            </div>
+
+                            <div class="Rtable-row is-striped">
+                                <div class="Rtable-cell date-cell">
+                                    <div class="Rtable-cell--heading">Date</div>
+                                    <div class="Rtable-cell--content date-content"><span class="webinar-date">Contrato</span><br /></div>
+                                </div>
+                                <div class="Rtable-cell topic-cell">
+                                    <div class="Rtable-cell--content title-content"><input type="radio" id="csi" name="contrato" value="si" checked><label for="csi"></label></div>
+                                </div>
+                                <div class="Rtable-cell access-link-cell">
+                                    <div class="Rtable-cell--heading">Access Link</div>
+                                    <div class="Rtable-cell--content access-link-content"><input type="radio" id="cno" name="contrato" value="no">
+                                        <label for="cno"></label></div>
+                                </div>
+                                <div class="Rtable-cell replay-link-cell">
+                                    <div class="Rtable-cell--heading">Replay</div>
+                                    <div class="Rtable-cell--content replay-link-content"><label for="contrato">$</label><input type="number" step="any" name="contrato" value="monto"></div>
+                                </div>
+
+                            </div>
+
+                            <div class="Rtable-row">
+                                <div class="Rtable-cell date-cell">
+                                    <div class="Rtable-cell--heading">Date</div>
+                                    <div class="Rtable-cell--content date-content"><span class="webinar-date">DepÃ³sito inicial</span><br /></div>
+                                </div>
+                                <div class="Rtable-cell topic-cell">
+                                    <div class="Rtable-cell--content title-content"><input type="radio" id="dsi" name="deposito" value="si" checked>
+                                        <label for="dsi"></label></div>
+                                </div>
+                                <div class="Rtable-cell access-link-cell">
+                                    <div class="Rtable-cell--heading">Access Link</div>
+                                    <div class="Rtable-cell--content access-link-content"> <input type="radio" id="dno" name="deposito" value="no">
+                                        <label for="dno"></label></div>
+                                </div>
+                                <div class="Rtable-cell replay-link-cell">
+                                    <div class="Rtable-cell--heading">Replay</div>
+                                    <div class="Rtable-cell--content replay-link-content"><label for="Deposito">$</label><input type="number" step="any" name="Deposito" value="monto"></div>
+                                </div>
+                            </div>
+
+                            <div class="Rtable-row is-striped">
+                                <div class="Rtable-cell date-cell">
+                                    <div class="Rtable-cell--heading">Date</div>
+                                    <div class="Rtable-cell--content date-content"><span class="webinar-date">Gastos de contrato</span></div>
+                                </div>
+                                <div class="Rtable-cell topic-cell">
+                                    <div class="Rtable-cell--content title-content"><input type="radio" id="gcsi" name="gastos" value="si" checked>
+                                        <label for="gcsi"></label></div>
+                                </div>
+                                <div class="Rtable-cell access-link-cell">
+                                    <div class="Rtable-cell--heading">Access Link</div>
+                                    <div class="Rtable-cell--content access-link-content"><input type="radio" id="gcno" name="gastos" value="no">
+                                        <label for="gcno"></label></div>
+                                </div>
+                                <div class="Rtable-cell replay-link-cell">
+                                    <div class="Rtable-cell--heading">Replay</div>
+                                    <div class="Rtable-cell--content replay-link-content"><label for="gastos">$</label><input type="number" step="any" name="Deposito" value="monto"></div>
+                                </div>
+
+                            </div>
+
+                            <div class="Rtable-row">
+                                <div class="Rtable-cell date-cell">
+                                    <div class="Rtable-cell--heading">Date</div>
+                                    <div class="Rtable-cell--content date-content"><span class="webinar-date">EscribanÃ­a</span></div>
+                                </div>
+                                <div class="Rtable-cell topic-cell">
+                                    <div class="Rtable-cell--content title-content"><input type="radio" id="esi" name="escribania" value="si" checked>
+                                        <label for="esi"></label></div>
+                                </div>
+                                <div class="Rtable-cell access-link-cell">
+                                    <div class="Rtable-cell--heading">Access Link</div>
+                                    <div class="Rtable-cell--content access-link-content"><input type="radio" id="eno" name="escribania" value="no">
+                                        <label for="eno"></label></div>
+                                </div>
+                                <div class="Rtable-cell replay-link-cell">
+                                    <div class="Rtable-cell--heading">Replay</div>
+                                    <div class="Rtable-cell--content replay-link-content"> <label for="EscribanÃ­a">$</label><input type="number" step="any" name="Deposito" value="monto"></div>
+                                </div>
+                            </div>
+
+                            <div class="Rtable-row is-striped">
+                                <div class="Rtable-cell date-cell">
+                                    <div class="Rtable-cell--heading">Date</div>
+                                    <div class="Rtable-cell--content date-content"><span class="webinar-date">Otros</span></div>
+                                </div>
+                                <div class="otros">
+                                    <div class="Rtable-cell--content title-content"> <input type="text" name="Deposito"></div>
+                                </div>
+
+
+                                <div class="Rtable-cell Rtable-cell--foot pdf-cell">
+                                    <div class="Rtable-cell--heading">Checklist</div>
+                                    <div class="Rtable-cell--content pdf-content"><a href="#0"><i class="ion-document-text"></i></a></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="tagsContainer">
+                    <input type="button" name="contrato" value="#Contrato">
+                    <input type="button" name="sinGarante" value="#SinGarante">
+                    <input type="button" name="sinMascotas" value="#SinMascotas">
+                    <input type="button" name="sinDeposito" value="#SinDeposito">
+                    <input type="button" name="sinNiÃ±os" value="#SinNiÃ±os">
+                    <input type="button" name="Deposito inicial" value="#DepositoInicial">
+                    <input type="button" name="sinExpensas" value="#SinExpensas">
+                    <input type="button" name="gastosDeContrato" value="#GastosDeContrato">
+                </div>
+            </div>
+            <div class="actionButtons">
+                <button type="submit" name="publicar" value="#">PUBLICAR</button>
+                <button type="submit" name="cancelar" value="#">CANCELAR</button>
+            </div>
+        </div>
+    </form>
+
+    <script>
+        var header = document.getElementById("userbtn");
+        var btns = header.getElementsByClassName("btn");
+        for (var i = 0; i < btns.length; i++) {
+            btns[i].addEventListener("click", function() {
+                var current = document.getElementsByClassName("active");
+                if (current.length > 0) {
+                    current[0].className = current[0].className.replace(" active", "");
+                }
+                this.className += " active";
+            });
+        }
+
+        var tipoB = document.getElementById("userbtn");
+        var btns = tipoB.getElementsByClassName("tipo");
+        for (var i = 0; i < btns.length; i++) {
+            btns[i].addEventListener("click", function() {
+                var current = document.getElementsByClassName("selected");
+                if (current.length > 0) {
+                    current[0].className = current[0].className.replace(" selected", "");
+                }
+                this.className += " selected";
+            });
+        }
+
+        var expBtn = document.getElementById("expensas");
+        var btns = expBtn.getElementsByClassName("monto");
+        for (var i = 0; i < btns.length; i++) {
+            btns[i].addEventListener("click", function() {
+                var current = document.getElementsByClassName("expselected");
+                if (current.length > 0) {
+                    current[0].className = current[0].className.replace(" expselected", "");
+                }
+                this.className += " expselected";
+            });
+        }
+
+    </script>
+
+</body>
+
+</html>

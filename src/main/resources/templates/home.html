@@ -1,0 +1,17 @@
+<!doctype html>
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml" 
+  xmlns:th="http://www.thymeleaf.org" 
+  xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+  layout:decorate="~{layout/base}">
+	<head>
+	</head>
+	<body>
+		 <div layout:fragment="content">
+		 <div class="mdl-grid">
+			  <div class="mdl-cell mdl-cell--4-col"></div>
+			  <div class="mdl-cell mdl-cell--4-col"><h2 th:text="${name}"></h2></div>
+			  <div class="mdl-cell mdl-cell--4-col"></div>
+		</div>
+		 </div>
+	</body>
+</html>

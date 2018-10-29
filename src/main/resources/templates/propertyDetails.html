@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:th="http://www.thymeleaf.org"
+	xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout">
+<head>
+<title>Detalles</title>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<script
+	src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<link th:href="@{/css/detalles.css}" rel="stylesheet" type="text/css">
+</head>
+
+<body th:object="${property}">
+	<div class="nav" id="navbar">
+		<div class="ContainerNavbar">
+			<a href="#" class="iconnav"><img th:src="@{/image/alquila.png}"
+				id="marca"></a>
+			<div class="buttons">
+				<a name="btnB" href="#"><input type="button" name="Crearanuncio"
+					id="buscar"><label for="buscar" name="label" id="buscador">BUSCAR</label></a>
+				<a name="btnC" href="#"><input type="button"
+					name="Crear anuncio" id="anuncio"><label for="anuncio"
+					name="label" id="formulario">CREAR ANUNCIO</label></a>
+			</div>
+		</div>
+	</div>
+	<div class="Imagecontainer">
+		<div class="image1"></div>
+		<div class="image2">
+			<img>
+		</div>
+		<div class="image3"></div>
+		<div class="image4"></div>
+		<div class="image5"></div>
+	</div>
+	<div class="Container">
+		<div class=GridContainer>
+			<div class="ContactInfo">
+				<ul>
+					<li>Teléfono</li>
+					<li>Correo</li>
+					<li>Dirección</li>
+					<li>Redes sociales</li>
+				</ul>
+			</div>
+			<div class="basicdata">
+				<div class="rent">
+					<span class="tags" name="departamento">DEPARTAMENTO</span> <span
+						class="title">ALQUILER MONTO</span><span
+						th:text="'$' + *{price}" id="alquiler"></span> <span
+						class="title">EXPENSAS</span><span id="expensas">$6000</span>
+				</div>
+				<div class="datacontainer">
+					<div class="rooms">
+						<label class="subtitle"><span>ZONAS</span></label> <label><span
+							name="zonas" th:text="*{rooms} + ' Ambientes'"></span></label> <label><span
+							name="zonas">2 Dormitorios</span></label>
+					</div>
+					<div class="services">
+						<label class="subtitle">
+							<span>SERVICIOS</span>
+						</label>
+						<!-- xxxx -->
+						<th:block th:each="dt : *{pDetails}">
+							<input class="check" name="baño" th:id="${dt.name}" type="checkbox" th:value="${dt.name}" checked />
+						    <label th:for="${dt.name}">
+						    	<span class="servicios" th:text="${dt.name}">Baño adicional</span>
+						    </label>
+					    </th:block>
+					    <!-- xxxx --> 
+						<div>
+							<label>
+								<p name="otros">
+									<span name="text">Otros:</span>
+									<span>Incluye termotanque y bajomesada</span>
+								</p>
+							</label>
+						</div>
+					</div>
+					<hr>
+					<div class="address">
+						<label class="subtitle">
+							<span id="direccion">DIRECCIÓN</span>
+						</label>
+						<span name="addressgroup">Calle:</span><span class="dire" th:text="*{aStreet}" ></span>
+						<span name="addressgroup">Altura:</span><span class="dire" th:text="*{aNumber}"></span>	
+										
+						<p name="otros" th:each="d : *{aDetails}">
+							<span name="text" th:text="${d.name}"></span>
+							<span th:text="${d.value}"> A 200 mts de la UNNE, frente a la facultad de ingeniería.</span>
+						</p>
+					</div>
+				</div>
+			</div>
+			<div class="Description">
+				<h2>DESCRIPCIÓN</h2>
+				<p th:text="*{description}"></p>
+				<hr>
+			</div>
+
+			<div class="LegalInfo">
+				<h2>INFORMACIÓN LEGAL</h2>
+				<P>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed
+					do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
+					enim ad minim veniam, quis nostrud exercitation ullamco laboris
+					nisi ut.</P>
+				<div class="wrapper">
+					<div class="Rtable Rtable--5cols Rtable--collapse">
+						<div class="Rtable-row Rtable-row--head">
+							<div class="Rtable-cell date-cell column-heading"></div>
+							<div class="Rtable-cell topic-cell column-heading">Si</div>
+							<div class="Rtable-cell access-link-cell column-heading">No</div>
+							<div class="Rtable-cell replay-link-cell column-heading"></div>
+
+						</div>
+						<!-- ROW -->
+						<th:block th:each="ld, n : *{legals}" >
+						<div class="Rtable-row" th:classappend="${(n.index % 2) == 0} ? is-striped : userclass">
+							<div class="Rtable-cell date-cell">
+								<div class="Rtable-cell--heading">Date</div>
+								<div class="Rtable-cell--content date-content">
+									<span class="webinar-date" th:text="${ld.name}">Garante</span><br />
+								</div>
+							</div>
+							<div class="Rtable-cell topic-cell">
+								<div class="Rtable-cell--content title-content">
+									<input type="checkbox" class="check" th:id="${ld.name}" th:name="${ld.name}" value="si" th:checked="true">
+									<label th:for="${ld.name}"></label>
+								</div>
+							</div>
+							<div class="Rtable-cell access-link-cell">
+								<div class="Rtable-cell--heading">Access Link</div>
+								<div class="Rtable-cell--content access-link-content">
+									<input type="checkbox" class="check" th:id="${ld.value}" th:name="${ld.name}" value="no">
+									<label th:for="${ld.value}"></label>
+								</div>
+							</div>
+							<div class="Rtable-cell replay-link-cell">
+								<div class="Rtable-cell--heading">Replay</div>
+								<div class="Rtable-cell--content replay-lik-content">
+									$<span th:text="${ld.value}">8000</span>
+								</div>
+							</div>
+
+						</div>
+						</th:block>
+						<!-- row -->
+					</div>
+				</div>
+				<hr>
+			</div>
+			<div class="tagscontainer">
+				<span name="tags">#Mascotas</span> <span name="tags">#ConExpensas</span>
+				<span name="tags">#Garante</span> <span name="tags">#Mascotas</span>
+			</div>
+		</div>
+		<footer>
+			<div class="footer">
+				<div class="footercontainer">
+					<ul>
+						<li>¿Quienes somos?</li>
+						<li>Preguntas frecuentes</li>
+						<li>Terminos y condiciones de uso</li>
+						<li>Crear anuncio</li>
+					</ul>
+					<div class="redes">
+						<span>Comunicate con nosotros</span>
+						<div class="icons">
+							<a href="#"><img th:src="@{/image/003-facebook.png}"></a> <a
+								href="#"><img th:src="@{/image/002-twitter.png}"></a> <a
+								href="#"><img th:src="@{/image/001-gmail.png}"></a>
+						</div>
+					</div>
+				</div>
+			</div>
+		</footer>
+	</div>
+	<script>
+        $('input[type="checkbox"]').on('change', function() {
+            $('input[name="' + this.name + '"]').not(this).prop('checked', false);
+        });
+    </script>
+</body>
+</html>
