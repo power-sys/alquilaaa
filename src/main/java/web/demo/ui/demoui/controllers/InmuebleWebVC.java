@@ -1,4 +1,4 @@
-package com.powersys.Alquila.webControllers;
+package web.demo.ui.demoui.controllers;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -7,9 +7,9 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
-import com.powersys.Alquila.DTOs.InmuebleDTO;
+import web.demo.ui.demoui.dtos.InmuebleDTO;
 //import com.powersys.Alquila.models.Inmueble;
-import com.powersys.Alquila.services.implementations.InmuebleService;
+import web.demo.ui.demoui.services.implementations.InmuebleService;
 
 @Controller
 public class InmuebleWebVC {
@@ -27,6 +27,6 @@ public class InmuebleWebVC {
 	 @GetMapping(value="/listar/inmuebles")
 	 public String listarInmueble(Model model) {
 		 model.addAttribute("inmueble", this.inmuebleService.findAll());
-		 return "listarInmueble";
+		 return "listarInmuebles";
 	 }
 }
