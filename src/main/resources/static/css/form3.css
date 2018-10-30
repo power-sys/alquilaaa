@@ -281,7 +281,7 @@ input[type=number] {
     border: none;
     display: flex;
     flex-direction: row;
-    justify-content:space-around;
+    
     width: 28vw;
     height: 4vh;
 }
