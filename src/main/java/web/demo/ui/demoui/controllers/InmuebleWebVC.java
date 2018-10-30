@@ -13,25 +13,28 @@ import web.demo.ui.demoui.services.implementations.InmuebleService;
 
 @Controller
 public class InmuebleWebVC {
-	
-	@Autowired
+
 	private InmuebleService inmuebleService;
-	
-	 @RequestMapping(value="/cargarInmueble", method=RequestMethod.GET)
-	    public String cargarInmuebleForm(Model model){
-	        model.addAttribute("inmueble", new InmuebleDTO());
-	        return "cargarInmueble";
-	    }
-	 
-	 @GetMapping(value="/listar/inmuebles")
-	 public String listarInmueble(Model model) {
-		 model.addAttribute("inmueble", this.inmuebleService.findAll());
-		 return "listarInmuebles";
-	 }
-	 
-	 @GetMapping(value="/homesweethome")
-	 public String home(Model model) {
-		 model.addAttribute("home", this.inmuebleService.findAll());
-		 return "home1";
-	 }
+
+	public InmuebleWebVC(InmuebleService service) {
+		this.inmuebleService = service;
+	}
+
+	@RequestMapping(value = "/cargarInmueble", method = RequestMethod.GET)
+	public String cargarInmuebleForm(Model model) {
+		model.addAttribute("inmueble", new InmuebleDTO());
+		return "cargarInmueble";
+	}
+
+	@GetMapping(value = "/listar/inmuebles")
+	public String listarInmueble(Model model) {
+		model.addAttribute("inmueble", this.inmuebleService.findAll());
+		return "listarInmuebles";
+	}
+
+	@GetMapping(value = "/")
+	public String home(Model model) {
+		model.addAttribute("inmueble", this.inmuebleService.findAll());
+		return "home1";
+	}
 }
