@@ -7,7 +7,7 @@
 <body>
 	<h2>Carga de Datos del Inmueble</h2>
 	<div class="container">
-		<form th:action="@{/cargarInmueble}" th:object="${inmueble}" method="post">
+		<form th:action="@{/property/add}" th:object="${inmueble}" method="post">
 	    <div>
 	        <label>Direccion: </label>
 	        <input type="text" th:field="*{direccion}"/>
