@@ -22,7 +22,7 @@ public class InmuebleWebVC {
 	@RequestMapping(value = "/cargarInmueble", method = RequestMethod.GET)
 	public String cargarInmuebleForm(Model model) {
 		model.addAttribute("inmueble", new InmuebleDTO());
-		return "cargarInmueble";
+		return "form3";
 	}
 
 	@GetMapping(value = "/")

@@ -5,6 +5,7 @@ package web.demo.ui.demoui.controllers;
 
 import java.util.List;
 
+import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
@@ -21,7 +22,7 @@ import web.demo.ui.demoui.services.implementations.InmuebleService;
  * email{amadeo.fgarcia@gmail.com}
  */
 
-@RestController
+@Controller
 public class InmuebleRestController {
 	
 	private InmuebleService inmuebleService;
@@ -31,9 +32,9 @@ public class InmuebleRestController {
 	}
 		
 	@PostMapping("/api/cargarInmueble")
-	public InmuebleDTO altaInmueble(@ModelAttribute InmuebleDTO inmuebleDTO, Model model) {
+	public String altaInmueble(@ModelAttribute InmuebleDTO inmuebleDTO, Model model) {
 		this.inmuebleService.insertInmueble(inmuebleDTO);
-		return inmuebleDTO;
+		return "redirect:/";
 	}
 	
 	@GetMapping("/api/mostrarInmuebles")

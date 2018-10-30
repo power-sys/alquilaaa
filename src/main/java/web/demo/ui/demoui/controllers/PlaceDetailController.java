@@ -35,7 +35,7 @@ public class PlaceDetailController {
 	@GetMapping("/add")
 	public String place(Model model) {
 		model.addAttribute("inmueble", new InmuebleDTO());
-		return "cargarInmueble";
+		return "form3";
 	}
 	
 	@PostMapping("/add")

@@ -72,7 +72,7 @@ function cantHab(){
 	}else{
 		var cant = "4 habitaciones"
 	}
-	$('#AuxDetInm').val($('#ingresartexto').val() + ", " + cant);
+	$('#AuxDetInm').val(cant + " " + $('#ingresartexto').val());
 	
 }
 
@@ -80,7 +80,7 @@ function msgAnuncio(){
 	if(document.getElementsByName('calle')[0].value != "" && document.getElementsByName('altura')[0].value != ""
 		&& $('#ingresartexto').val() != "" && $('#legal').val() != "" && $('#otrosDetalles').val() != "" 
 		&& $('#monto').val() != ""){		
-		window.alert("Se registro el anuncio con exito")
+		window.alert("Se registro el anuncio con exito")		
 	}
 }
 
