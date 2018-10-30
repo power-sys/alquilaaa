@@ -95,8 +95,7 @@ a:link:active, a:visited:active {
 /*......................................*/
 .firstContainer {
     display: grid;
-    grid-template-columns: repeat(6, 1fr);
-    height:auto;
+    grid-template-columns: repeat(5, 1fr);
 }
 
 .card_container {
@@ -181,7 +180,7 @@ h1 {
 }
 
  #dpto{
-   padding: 2%;
+   padding: .4em;
     background-color:#f5c67f;
     color:white;
     font-family: 'Asap', sans-serif;
@@ -191,7 +190,7 @@ h1 {
     font-size: 1vw;
 }
 #alquiler {
-    padding: 1%;
+    padding: .3em;
     background-color:#d9654f;
     color:white;
     font-family: 'Asap', sans-serif;
@@ -209,7 +208,7 @@ span.title {
 }
 
 #expensas {
-    padding: 1%;
+    padding: .3em;
     background-color:#d9654f;
     color:white;
     font-family: 'Asap', sans-serif;
