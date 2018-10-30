@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" 
+  xmlns:th="http://www.thymeleaf.org" 
+  xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout" >
+<head>
+    <title>Home</title>
+    <link rel="stylesheet" type="text/css" th:href="@{css/home.css}">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <meta charset="UTF-8">
+</head>
+<body>
+<div class="nav" id="navbar">
+        <div class="ContainerNavbar">
+            <a href="#" class="iconnav"><img src="image/alquila.png" id="marca"></a>
+            <div class="buttons">
+            <a name="btnC" href="#"><input type="button" name="Crear anuncio" id="anuncio"><label for="anuncio" name="label" id="formulario">CREAR ANUNCIO</label></a>
+            </div>
+        </div>
+    </div>
+    <div class="firstContainer">
+    <div class="card_container">
+    <h1>¡ÚLTIMOS ANUNCIOS!</h1>
+    <div class="card">
+        <div class="card image" style="background-image: url(image/edificio7.jpg)">
+        </div>
+        <div class="card_text_container">
+        <div class="card_title">
+            <span class="card_title text" id="dpto">DEPARTAMENTO</span> 
+                   <span class="title">ALQUILER</span><span id="alquiler">$6500</span>
+                    <span class="title">EXPENSAS</span><span id="expensas">$6000</span>
+            
+        </div>
+        <div class="card_address">
+        <div class="address">
+            <h3 class="subtitle">DIRECCIÓN</h3>
+                    <span class="addressgroup">Calle:</span><span class="dire">Av. Libertad</span>
+                    <span class="addressgroup">Altura:</span><span class="dire">5215</span>
+                        <span class="addressgroup">Piso:</span><span class="dire">2</span>
+                         <span class="addressgroup">Departamento:</span><span class="dire">A</span>
+            
+                   <p name="otros"><span class="otros">Otros:</span><span class="dire"> A 200  mts de la UNNE, frente a la facultad de ingeniería.</span></p>
+                </div>
+                
+        </div>
+        <div class="card_actions">
+            <span class="date">29/10/2018</span>
+             <a name="btnB" href="#"><input type="button" name="Crearanuncio" id="buscar"><label for="buscar" name="label" id="buscador">DETALLES</label></a>
+        </div>
+        </div>
+    </div>
+    </div>
+        </div>
+        <footer>
+            <div class="footer">
+                <div class="footercontainer">
+                    <ul>
+                        <li>¿Quienes somos?</li>
+                        <li>Preguntas frecuentes</li>
+                        <li>Terminos y condiciones de uso</li>
+                        <li>Crear anuncio</li>
+                    </ul>
+                        <div class="redes">
+                        <span>Comunicate con nosotros</span>
+                        <div class="icons"><a href="#"><img src="image/003-facebook.png"></a>
+                     <a href="#"><img src="image/002-twitter.png"></a>
+                     <a href="#"><img src="image/001-gmail.png"></a>
+                     </div>
+                    </div>
+                </div>
+            </div>
+        </footer>
+</body>
+</html>
