@@ -55,9 +55,9 @@ public class DataBaseSeedeListener {
 			
 			List<Detail> details = new ArrayList<>();
 			details.add(new Detail());
-//			details.add(new Detail());
+			details.add(new Detail());
 			details.get(0).setName(fakeText.randomString(15));
-//			details.get(0).setValue(fakeText.randomString(20));
+			details.get(0).setValue(fakeText.randomString(20));
 //			details.get(1).setName(fakeText.randomString(10));
 //			details.get(1).setValue(fakeText.randomString(20));
 			
