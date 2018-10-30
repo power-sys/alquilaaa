@@ -23,10 +23,15 @@ public class InmuebleWebVC {
 	        return "cargarInmueble";
 	    }
 	 
-	 
 	 @GetMapping(value="/listar/inmuebles")
 	 public String listarInmueble(Model model) {
 		 model.addAttribute("inmueble", this.inmuebleService.findAll());
 		 return "listarInmuebles";
+	 }
+	 
+	 @GetMapping(value="/homesweethome")
+	 public String home(Model model) {
+		 model.addAttribute("home", this.inmuebleService.findAll());
+		 return "home1";
 	 }
 }
