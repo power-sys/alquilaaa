@@ -22,7 +22,7 @@ import web.demo.ui.demoui.services.implementations.InmuebleService;
  * email{amadeo.fgarcia@gmail.com}
  */
 
-@Controller
+@RestController
 public class InmuebleRestController {
 	
 	private InmuebleService inmuebleService;
@@ -31,11 +31,7 @@ public class InmuebleRestController {
 		this.inmuebleService = service;
 	}
 		
-	@PostMapping("/api/cargarInmueble")
-	public String altaInmueble(@ModelAttribute InmuebleDTO inmuebleDTO, Model model) {
-		this.inmuebleService.insertInmueble(inmuebleDTO);
-		return "redirect:/";
-	}
+	
 	
 	@GetMapping("/api/mostrarInmuebles")
 	public List<InmuebleDTO> getInmuebles(){
