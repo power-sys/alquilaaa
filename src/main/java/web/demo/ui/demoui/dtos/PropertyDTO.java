@@ -19,6 +19,7 @@ public class PropertyDTO {
 	private List<String> photos;
 	private String description;
 	private final Set<DetailDTO> legals= new HashSet<>();
+	private String published;
 	
 	public PropertyDTO() {
 		
@@ -104,4 +105,11 @@ public class PropertyDTO {
 		this.pDetails = pDetails;
 	}
 	
+	public String getPublished() {
+		return published;
+	}
+
+	public void setPublished(String published) {
+		this.published = published;
+	}	
 }
