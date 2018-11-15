@@ -1,5 +1,7 @@
 package web.demo.ui.demoui.services.implementations;
 
+import java.text.DateFormat;
+import java.time.format.DateTimeFormatter;
 import java.util.Arrays;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -57,6 +59,8 @@ public class PlaceDetailServiceImpl implements PlaceDetailService {
 				for(Detail d : p.getLegals()) {
 					pd.addDetail(d.getName(), d.getValue());
 				}
+				
+				pd.setPublished(p.getPublished().format(DateTimeFormatter.ISO_DATE));
 				
 				return pd;
 	}
