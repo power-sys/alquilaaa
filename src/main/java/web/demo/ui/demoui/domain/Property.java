@@ -1,10 +1,10 @@
 package web.demo.ui.demoui.domain;
 
+import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.List;
 
 import javax.persistence.CascadeType;
-import javax.persistence.ElementCollection;
 import javax.persistence.Entity;
 import javax.persistence.EnumType;
 import javax.persistence.Enumerated;
@@ -33,18 +33,27 @@ public class Property {
 	private String description;
 	
 	@OneToMany(cascade = CascadeType.PERSIST)
-	private List<Detail> details;
+	private List<Detail> details = new ArrayList<>();
 
 	@OneToMany(cascade = CascadeType.PERSIST)
-	private List<Detail> legals;
+	private List<Detail> legals = new ArrayList<>();
 
 	private Integer price;
 
 	@Enumerated(EnumType.STRING)
 	private PlaceType type;
 
-	@ElementCollection
-	private List<String> images = new ArrayList<>();
+	private String image;
+	
+	private LocalDate published;
+
+	public LocalDate getPublished() {
+		return published;
+	}
+
+	public void setPublished(LocalDate published) {
+		this.published = published;
+	}
 
 	public Long getId() {
 		return id;
@@ -110,12 +119,12 @@ public class Property {
 		this.type = type;
 	}
 
-	public List<String> getImages() {
-		return images;
+	public String getImages() {
+		return image;
 	}
 
 	public void addImage(String imageUrl) {
-		this.images.add(imageUrl);
+		this.image = imageUrl;
 	}
 	
 	
