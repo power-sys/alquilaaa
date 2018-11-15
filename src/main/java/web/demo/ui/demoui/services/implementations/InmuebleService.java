@@ -1,6 +1,7 @@
 package web.demo.ui.demoui.services.implementations;
 
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -54,7 +55,9 @@ public class InmuebleService implements InmuebleServiceInterface{
 
 	@Override
 	public List<Property> findAll() {
-		return (List<Property>) this.propertyRepository.findAll();
+		List<Property> p = (List<Property>) this.propertyRepository.findAll();
+		Collections.sort(p, (d1, d2) ->d2.getPublished().compareTo(d1.getPublished()));
+		return p;
 	}
 
 }
