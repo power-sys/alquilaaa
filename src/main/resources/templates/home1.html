@@ -14,11 +14,9 @@
         <div class="ContainerNavbar">
             <a href="#" class="iconnav"><img src="img/alquila.png" id="marca"></a>
             <div class="buttons">
-            <a name="btnC" th:href="@{/property/add}">
-	            <input type="button" name="Crear anuncio" id="anuncio">
-	            <label for="anuncio" name="label" id="formulario">
+            <a class="btn" th:href="@{/property/add}">
+	            <span class="anuncio"></span>
 	            	CREAR ANUNCIO
-	            </label>
             </a>
             </div>
         </div>
@@ -32,7 +30,7 @@
         <div class="card_text_container">
         <div class="card_title">
             <span class="card_title text" id="dpto" th:text="${i.type}">DEPARTAMENTO</span> 
-                   <span class="title">ALQUILER</span><span id="alquiler" th:text="${i.price}">$6500</span>
+                   <span class="title">ALQUILER</span><span id="alquiler" th:text="${'$' + i.price}">$6500</span>
                     
             
         </div>
@@ -40,7 +38,8 @@
         <div class="address">
             <h3 class="subtitle">DIRECCIÓN:</h3>
                     
-                    <span class="dire"th:text="${i.adress.number}">5215</span>
+                    <span class="dire" th:text="${i.adress.street}">5215</span>
+                    <span class="dire" th:text="${i.adress.number}">5215</span>
                         
                         <h3 class="subtitle">DETALLES:</h3>
                    		<p class="dire" name="otros" th:each="d:${i.details}">
@@ -53,10 +52,10 @@
                 
         </div>
         <div class="card_actions">
-            <span class="date" th:text="${i.published}">29/10/2018</span>
-             <a name="btnB" th:href="@{'/property/' + ${i.id}}">
-             	<input type="button" name="Crearanuncio" id="buscar">
-             	<label for="buscar" name="label" id="buscador">MAS DETALLES</label>
+            <span class="date" th:text="${#temporals.format(i.published, 'dd/MM/yyyy')}">29/10/2018</span>
+             <a class="btn" th:href="@{'/property/' + ${i.id}}">
+             <span type="button" class="anuncio"></span>
+             	MAS DETALLES
              </a>
         </div>
         </div>
@@ -82,5 +81,14 @@
                 </div>
             </div>
         </footer>
+        <script type="text/javascript">
+		<!--//-->
+			$('.btn').mouseover(function(e){
+				$(e.target).animate({position: "relative", left:"30px", fontSize: "0.99em" }, 70 );
+			});
+			$('.btn').mouseout(function(e){
+				$(e.target).animate({ fontSize: "1em" }, 70 );
+			});
+		</script>
 </body>
 </html>
