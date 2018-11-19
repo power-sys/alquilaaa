@@ -8,34 +8,38 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 <script
 	src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-<link th:href="@{/css/detalles.css}" rel="stylesheet" type="text/css">
+<link th:href="@{/css/detalles.css}" rel="stylesheet" type="text/css" />
 </head>
 
 <body th:object="${property}">
 	<div class="nav" id="navbar">
 		<div class="ContainerNavbar">
-			<a href="#" class="iconnav"><img th:src="@{/image/alquila.png}"
-				id="marca"></a>
+			<a href="#" class="iconnav">
+				<img th:src="@{/img/alquila.png}" id="marca" />
+			</a>
 			<div class="buttons">
-				<a name="btnB" href="#"><input type="button" name="Crearanuncio"
-					id="buscar"><label for="buscar" name="label" id="buscador">BUSCAR</label></a>
-				<a name="btnC" th:href="@{/property/add}"><input type="button"
-					name="Crear anuncio" id="anuncio"><label for="anuncio"
-					name="label" id="formulario">CREAR ANUNCIO</label></a>
+				<a class="btn" href="#">
+				<span class="anuncio"></span>
+				BUSCAR
+				</a>
+				
+				<a class="btn" th:href="@{/property/add}">
+				<span class="anuncio"></span>
+				CREAR ANUNCIO</a>
 			</div>
 		</div>
 	</div>
 	<div class="Imagecontainer">
 		<div class="image1"></div>
 		<div class="image2">
-			<img>
+			<img />
 		</div>
 		<div class="image3"></div>
 		<div class="image4"></div>
 		<div class="image5"></div>
 	</div>
 	<div class="Container">
-		<div class=GridContainer>
+		<div class="GridContainer">
 			<div class="ContactInfo">
 				<ul>
 					<li>Teléfono</li>
@@ -53,17 +57,18 @@
 				</div>
 				<div class="datacontainer">
 					<div class="rooms">
-						<label class="subtitle"><span>ZONAS</span></label> <label><span
-							name="zonas" th:text="*{rooms} + ' Ambientes'"></span></label> <label><span
-							name="zonas">2 Dormitorios</span></label>
-					</div>
+						<label class="subtitle"><span>ZONAS</span></label>
+						<label>
+							<span name="zonas" th:text="*{rooms} + ' Ambientes'"></span>
+						</label>
+							</div>
 					<div class="services">
 						<label class="subtitle">
 							<span>SERVICIOS</span>
 						</label>
 						<!-- xxxx -->
 						<th:block th:each="dt : *{pDetails}">
-							<input class="check" name="baño" th:id="${dt.name}" type="checkbox" th:value="${dt.name}" checked />
+							<input class="check" name="baño" th:id="${dt.name}" type="checkbox" th:value="${dt.name}" checked="checked" />
 						    <label th:for="${dt.name}">
 						    	<span class="servicios" th:text="${dt.name}">Baño adicional</span>
 						    </label>
@@ -78,33 +83,31 @@
 							</label>
 						</div>
 					</div>
-					<hr>
+					<hr />
 					<div class="address">
 						<label class="subtitle">
 							<span id="direccion">DIRECCIÓN</span>
 						</label>
-						<span class="dire" th:text="*{aStreet}" ></span>
-						<p name="otros" th:each="d : *{aDetails}">
+						<span style="text-transform: capitalize;" class="dire" th:text="*{aStreet}" ></span>
+						<span class="dire" th:text="*{aNumber}" ></span>
+						<p style="font-size: .8em" name="otros" th:each="d : *{aDetails}">
 							<span name="text" th:text="${d.name}"></span>
+							<span th:text="${d.value}"></span>
 						</p>
 					</div>
 				</div>
 			</div>
 			<div class="LegalInfo">
 				<h2>INFORMACIÓN LEGAL</h2>
-				<p th:text="*{description}">
-					Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed
-					do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
-					enim ad minim veniam, quis nostrud exercitation ullamco laboris
-					nisi ut.
-				</p>
-				<hr>
+				<p th:text="*{description}"></p>
+				<hr />
 			</div>
 			<div class="tagscontainer">
 				<span name="tags">#Mascotas</span> <span name="tags">#ConExpensas</span>
 				<span name="tags">#Garante</span> <span name="tags">#Mascotas</span>
 			</div>
 		</div>
+		<div style="height: 50px"></div>
 		<footer>
 			<div class="footer">
 				<div class="footercontainer">
@@ -117,9 +120,9 @@
 					<div class="redes">
 						<span>Comunicate con nosotros</span>
 						<div class="icons">
-							<a href="#"><img th:src="@{/image/003-facebook.png}"></a> <a
-								href="#"><img th:src="@{/image/002-twitter.png}"></a> <a
-								href="#"><img th:src="@{/image/001-gmail.png}"></a>
+							<a href="#"><img th:src="@{/img/003-facebook.png}" /></a>
+							<a href="#"><img th:src="@{/img/002-twitter.png}" /></a>
+							<a href="#"><img th:src="@{/img/001-gmail.png}" /></a>
 						</div>
 					</div>
 				</div>
