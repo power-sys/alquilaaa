@@ -48,13 +48,15 @@ a:link:active, a:visited:active {
     color: (internal value);
 }
 
-#anuncio {
+.anuncio {
     width:2vw;
     height: 4vh;
     border-radius:180px;
     border: none;
     outline: none;
-    background-color: #d9654f
+    background-color: #d9654f;
+    padding: 1px;
+    margin: 0.4em
 }
 
 #buscar {
@@ -71,14 +73,12 @@ a:link:active, a:visited:active {
     justify-content:flex-end;
     width: 40%;
 }
-[name="btnB"] {
-    margin-right: 20px;
-}
-[name="label"] {
+ a.btn {
     margin-left: 10px;
     font-family: 'Asap',sans-serif;
     font-weight: 600;
     font-size:calc (12px + 0.3vw);
+    margin-right: 20px;
 }
 #formulario {
     width:150px;
