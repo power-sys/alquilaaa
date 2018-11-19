@@ -74,11 +74,11 @@ a:link:active, a:visited:active {
     width: 40%;
 }
  a.btn {
-    margin-left: 10px;
+    float:right;
     font-family: 'Asap',sans-serif;
     font-weight: 600;
     font-size:calc (12px + 0.3vw);
-    margin-right: 20px;
+    margin-right: 10px;
 }
 #formulario {
     width:150px;
