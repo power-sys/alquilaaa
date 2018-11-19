@@ -133,15 +133,33 @@ a:link:active, a:visited:active {
     justify-content:flex-end;
     width: 40%;
 }
-[name="btnB"] {
-    margin-right: 20px;
-}
-[name="label"] {
+div.card_actions a {
     margin-left: 10px;
     font-family: 'Asap',sans-serif;
     font-weight: 600;
     font-size:calc (12px + 0.3vw);
+    margin-right: 20px;
 }
+
+.anuncio {
+    width:2vw;
+    height: 4vh;
+    border-radius:180px;
+    border: none;
+    outline: none;
+    background-color: #d9654f;
+    padding: 1px;
+    margin: 0.4em
+}
+
+ a.btn {
+    margin-left: 10px;
+    font-family: 'Asap',sans-serif;
+    font-weight: 600;
+    font-size:calc (12px + 0.3vw);
+    margin-right: 20px;
+}
+
 #formulario {
     width:150px;
 }
@@ -169,7 +187,7 @@ a:link:active, a:visited:active {
 
 .LegalInfo {
     width:50vw;
-    grid-row: 5;
+    grid-row: 4;
     grid-column: 3/4;
     justify-content: center;
 }
@@ -180,8 +198,8 @@ a:link:active, a:visited:active {
     
 }
 .tagscontainer {
-    grid-row: 9;
-    grid-column: 3/4;
+    grid-row: 5;
+    grid-column: 2/4;
     margin-bottom: 50px;
     display: flex;
     flex-direction: row;
@@ -353,7 +371,7 @@ font-weight:400;
 }
 
 .tags {
-    padding: 0.3em;
+    padding: .3em;
     background-color:#d9654f;
     color:white;
     font-family: 'Asap', sans-serif;
@@ -433,7 +451,7 @@ span.title {
     font-family: 'Asap', sans-serif;
     font-weight: 700;
     font-size: calc(12px + 0.3vw);
-    margin-right: 1em;
+    margin-right: 24px;
 }
 
 [name="addressgroup"] {
