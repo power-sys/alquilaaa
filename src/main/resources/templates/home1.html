@@ -54,7 +54,7 @@
         <div class="card_actions">
             <span class="date" th:text="${#temporals.format(i.published, 'dd/MM/yyyy')}">29/10/2018</span>
              <a class="btn" th:href="@{'/property/' + ${i.id}}">
-             <span type="button" class="anuncio"></span>
+             <span class="anuncio"></span>
              	MAS DETALLES
              </a>
         </div>
@@ -84,10 +84,10 @@
         <script type="text/javascript">
 		<!--//-->
 			$('.btn').mouseover(function(e){
-				$(e.target).animate({position: "relative", left:"30px", fontSize: "0.99em" }, 70 );
+				$(e.target).animate({opacity: '0.6' }, 90 );
 			});
 			$('.btn').mouseout(function(e){
-				$(e.target).animate({ fontSize: "1em" }, 70 );
+				$(e.target).animate({ opacity: '1' }, 70 );
 			});
 		</script>
 </body>
