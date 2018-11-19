@@ -1,5 +1,6 @@
 package web.demo.ui.demoui.services.implementations;
 
+import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
@@ -37,7 +38,6 @@ public class InmuebleService implements InmuebleServiceInterface{
 		p.setDetails(details);
 		p.setLegals(legals);
 		Address a = new Address();
-		
 		a.setNumber(inmueble.getDireccion());
 		p.setPrice(inmueble.getPrecio());
 		Detail d = new Detail();
@@ -47,8 +47,9 @@ public class InmuebleService implements InmuebleServiceInterface{
 		d2.setName(inmueble.getOtrosDetalles());
 		p.getDetails().add(d2);
 		p.setAdress(a);
-		p.setType(PlaceType.DEPARMENT);
+		p.setType(setPlaceType(inmueble.getTipoInmueble()));
 		p.setDescription(inmueble.getDetallesLegales());
+		p.setPublished(LocalDate.now());
 		this.propertyRepository.save(p);
 		return true;
 	}
@@ -58,6 +59,17 @@ public class InmuebleService implements InmuebleServiceInterface{
 		List<Property> p = (List<Property>) this.propertyRepository.findAll();
 		Collections.sort(p, (d1, d2) ->d2.getPublished().compareTo(d1.getPublished()));
 		return p;
+	}
+	
+	private static PlaceType setPlaceType(String name) {
+		switch (name.toLowerCase()) {
+		case "departamento":
+			return PlaceType.DEPARMENT;
+		case "casa":
+			return PlaceType.HOUSE;
+		default:
+			return PlaceType.DEPARMENT;
+		}
 	}
 
 }
