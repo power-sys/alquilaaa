@@ -45,6 +45,14 @@ public class Property {
 
 	private String image;
 	
+	public String getImage() {
+		return image;
+	}
+
+	public void setImage(String image) {
+		this.image = image;
+	}
+
 	private LocalDate published;
 
 	public LocalDate getPublished() {
