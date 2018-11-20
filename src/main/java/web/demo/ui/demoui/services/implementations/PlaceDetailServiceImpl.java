@@ -34,6 +34,7 @@ public class PlaceDetailServiceImpl implements PlaceDetailService {
 				"https://via.placeholder.com/256", 
 				"https://via.placeholder.com/256"};
 		PropertyDTO pd = new PropertyDTO();
+				 pd.setId(p.getId().toString());
 				 pd.setaStreet(p.getAdress().getStreet());
 				 pd.setaNumber(p.getAdress().getNumber());
 				 pd.setDescription(p.getDescription());
