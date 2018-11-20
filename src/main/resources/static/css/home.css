@@ -187,7 +187,6 @@ h1 {
     font-weight: 700;
     border-radius: 5px;
     align-self: center;
-    font-size: 1vw;
 }
 #alquiler {
     padding: .3em;
@@ -196,7 +195,6 @@ h1 {
     font-family: 'Asap', sans-serif;
     font-weight: 700;
     border-radius: 5px;
-    font-size: 1vw;
 }
 
 span.title {
@@ -204,7 +202,7 @@ span.title {
     font-weight: 700;
     margin-left: 10px;
     margin-right: 10px;
-    font-size: 1vw;
+    
 }
 
 #expensas {
@@ -214,7 +212,7 @@ span.title {
     font-family: 'Asap', sans-serif;
     font-weight: 700;
     border-radius: 5px;
-    font-size: 1vw;
+    
 }
 
 .card_text_container{
@@ -224,13 +222,13 @@ span.title {
 .date {
     font-family: 'Asap', sans-serif;
     font-weight: 700;
-    font-size: 1vw;
+    
 }
 .otros {
-    font-size: 0.9vw;
+    font-size: 1.3vw;
 }
 .subtitle {
-    font-size: 1vw;
+    
 }
 /*......................................*/
 
@@ -255,7 +253,6 @@ ul {
     list-style: none;
     margin-left: 0;
     font-weight: 700;
-    font-size: calc(10px + 0.2vw);
     letter-spacing: 0.5px;
 }
 
@@ -272,7 +269,6 @@ li {
     font-family: 'Lato', sans-serif;
     color: white;
     font-weight: 700;
-    font-size: calc(13px + 0.2vw);
     align-self: flex-end;
     letter-spacing: 1px;
 }
