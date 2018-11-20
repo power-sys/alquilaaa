@@ -8,7 +8,7 @@ import java.util.List;
 import java.util.Set;
 
 public class PropertyDTO {
-	
+	private String id;
 	private String placeType;
 	private String rooms;
 	private String price;
@@ -25,6 +25,14 @@ public class PropertyDTO {
 		
 	}
 	
+	public String getId() {
+		return id;
+	}
+
+	public void setId(String id) {
+		this.id = id;
+	}
+
 	public void addDetail(String name, String value) {
 		this.legals.add(new DetailDTO(name, value));
 	}
