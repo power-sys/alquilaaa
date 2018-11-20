@@ -9,7 +9,7 @@
 </head>
 
 <body>
-    <form th:action="@{/cargarInmueble}" th:object="${inmueble}" method="post">
+    <form enctype="multipart/form-data" th:action="@{/cargarInmueble}" th:object="${inmueble}" method="post">
         <div class="firstContainer">
             <div class="title">
                 <h1>CREAR ANUNCIO</h1>
@@ -17,7 +17,7 @@
             <div class="gridContainer">
                 <div class="imageContainer">
                     <div class="imageUpload">
-                        <input type='file' id="imageUpload" accept=".png, .jpg, .jpeg" />
+                        <input type='file' id="imageUpload" accept=".png, .jpg, .jpeg" th:field="*{image}" />
                         <label for="imageUpload"></label>
                     </div>
                     <div class="imagePreview">
