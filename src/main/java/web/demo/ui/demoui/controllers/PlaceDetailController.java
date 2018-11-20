@@ -8,6 +8,7 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 
+import web.demo.ui.demoui.dtos.ImageDTO;
 import web.demo.ui.demoui.dtos.InmuebleDTO;
 import web.demo.ui.demoui.services.PlaceDetailService;
 import web.demo.ui.demoui.services.implementations.InmuebleService;
@@ -34,12 +35,12 @@ public class PlaceDetailController {
 	
 	@GetMapping("/add")
 	public String place(Model model) {
-		model.addAttribute("inmueble", new InmuebleDTO());
+		model.addAttribute("inmueble", new ImageDTO());
 		return "form3";
 	}
 	
 	@PostMapping("/add")
-	public String altaInmueble(@ModelAttribute InmuebleDTO inmuebleDTO) {
+	public String altaInmueble(@ModelAttribute ImageDTO inmuebleDTO) {
 		this.inmuebleService.insertInmueble(inmuebleDTO);
 		return "redirect:add";
 	}
