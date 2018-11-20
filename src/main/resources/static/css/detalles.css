@@ -30,19 +30,15 @@ body {
     justify-content: center;
 }
 
+.image1 > img{
+	display:block;
+	margin: auto;
+	width: 100%;
+}
+
 .Imagecontainer {
-    margin: 0;
-    height: 50vh;
-    background-color:black;
-    position: -webkit-sticky;
-    position: sticky;
-    box-sizing: border-box;
+    
     box-shadow: 0 0 40px rgba(0, 0, 0, 0.2);
-    top: 8%;
-    z-index: 3;
-    display: grid;
-    grid-template-columns: repeat(6,1fr);
-    grid-template-rows:100%;
 }
 
 .image1 {
