@@ -25,14 +25,13 @@
     <div class="card_container">
     <h1>¡ÚLTIMOS ANUNCIOS!</h1>
     <div class="card" th:each="i: ${inmueble}">
-        <div class="card image" style="background-image: url(img/edificio7.jpg)">
+        <!-- <div class="card image" style="background-image: url(img/edificio7.jpg)"> -->
+        <div class="card image" th:style="'background-image:url(' + @{/image/} + ${i.id} +');'">
         </div>
         <div class="card_text_container">
         <div class="card_title">
             <span class="card_title text" id="dpto" th:text="${i.type}">DEPARTAMENTO</span> 
                    <span class="title">ALQUILER</span><span id="alquiler" th:text="${'$' + i.price}">$6500</span>
-                    
-            
         </div>
         <div class="card_address">
         <div class="address">
