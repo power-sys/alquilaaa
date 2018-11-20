@@ -61,6 +61,10 @@ public class InmuebleService implements InmuebleServiceInterface{
 		return p;
 	}
 	
+	public Property find(String id) {
+		return this.propertyRepository.findById(Long.parseLong(id));
+	}
+	
 	private static PlaceType setPlaceType(String name) {
 		switch (name.toLowerCase()) {
 		case "departamento":
